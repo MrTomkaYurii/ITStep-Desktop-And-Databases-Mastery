@@ -1,0 +1,23 @@
+=========================================
+=== MS SQL DB CONFIGURATION GUIDE ===
+=========================================
+
+1. LOCAL DATABASE (Recommended for development):
+------------------------------------------------
+Connection string for SQL Server LocalDB:
+Server=(localdb)\mssqllocaldb;Database=MyEventsDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True
+
+Connection string for SQL Server Express (Default Instance):
+Server=.;Database=MyEventsDb;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True
+
+2. RUN DATABASE SCRIPT:
+-----------------------
+Execute MyEventsDb_Create_And_Seed.sql in SSMS or Azure Data Studio
+to initialize the schema and seed initial events, users, categories and messages.
+
+3. CLOUD / AZURE DEPLOYMENT:
+----------------------------
+Configure your server, credentials and connection strings securely via:
+- Environment Variables (e.g., ConnectionStrings__MSSQLConnection)
+- Azure Key Vault / App Configuration
+- User Secrets (dotnet user-secrets)
